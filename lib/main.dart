@@ -64,10 +64,10 @@ class ListSectionInsetExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       child: CupertinoListSection.insetGrouped(
-        header: const Text('My Reminders'),
+        header: const Text('発車駅情報'),
         children: <CupertinoListTile>[
           CupertinoListTile.notched(
-            title: const Text('Open pull request'),
+            title: const Text('湘南新宿ライン'),
             leading: Container(
               width: double.infinity,
               height: double.infinity,
@@ -83,7 +83,7 @@ class ListSectionInsetExample extends StatelessWidget {
             ),
           ),
           CupertinoListTile.notched(
-            title: const Text('Push to master'),
+            title: const Text('方向'),
             leading: Container(
               width: double.infinity,
               height: double.infinity,
@@ -92,7 +92,7 @@ class ListSectionInsetExample extends StatelessWidget {
             additionalInfo: const Text('Not available'),
           ),
           CupertinoListTile.notched(
-            title: const Text('View last commit'),
+            title: const Text('藤沢'),
             leading: Container(
               width: double.infinity,
               height: double.infinity,
