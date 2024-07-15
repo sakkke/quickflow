@@ -91,21 +91,11 @@ class ListSectionInsetExample extends StatelessWidget {
           ),
           CupertinoListTile.notched(
             title: const Text('方向'),
-            leading: Container(
-              width: double.infinity,
-              height: double.infinity,
-              color: CupertinoColors.systemRed,
-            ),
             additionalInfo: const Text('Not available'),
           ),
           CupertinoListTile.notched(
             title: const Text('藤沢'),
             subtitle: const Text('発車駅'),
-            leading: Container(
-              width: double.infinity,
-              height: double.infinity,
-              color: CupertinoColors.activeGreen,
-            ),
             trailing: const CupertinoListTileChevron(),
             onTap: () => Navigator.of(context).push(
               CupertinoPageRoute<void>(
@@ -118,11 +108,6 @@ class ListSectionInsetExample extends StatelessWidget {
           CupertinoListTile.notched(
             title: const Text('7:05'),
             subtitle: const Text('発車時刻'),
-            leading: Container(
-              width: double.infinity,
-              height: double.infinity,
-              color: CupertinoColors.activeGreen,
-            ),
             trailing: const CupertinoListTileChevron(),
             onTap: () => Navigator.of(context).push(
               CupertinoPageRoute<void>(
