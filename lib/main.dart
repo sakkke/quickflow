@@ -162,6 +162,7 @@ class ListSectionInsetExample2 extends StatelessWidget {
         children: <CupertinoListTile>[
           CupertinoListTile.notched(
             title: const Text('1号車'),
+            subtitle: const Text('快適'),
             leading: Container(
               width: double.infinity,
               height: double.infinity,
@@ -178,6 +179,7 @@ class ListSectionInsetExample2 extends StatelessWidget {
           ),
           CupertinoListTile.notched(
             title: const Text('2号車'),
+            subtitle: const Text('快適'),
             leading: Container(
               width: double.infinity,
               height: double.infinity,
@@ -194,6 +196,7 @@ class ListSectionInsetExample2 extends StatelessWidget {
           ),
           CupertinoListTile.notched(
             title: const Text('3号車'),
+            subtitle: const Text('快適'),
             leading: Container(
               width: double.infinity,
               height: double.infinity,
@@ -210,6 +213,7 @@ class ListSectionInsetExample2 extends StatelessWidget {
           ),
           CupertinoListTile.notched(
             title: const Text('4号車'),
+            subtitle: const Text('快適'),
             leading: Container(
               width: double.infinity,
               height: double.infinity,
@@ -226,6 +230,7 @@ class ListSectionInsetExample2 extends StatelessWidget {
           ),
           CupertinoListTile.notched(
             title: const Text('5号車'),
+            subtitle: const Text('快適'),
             leading: Container(
               width: double.infinity,
               height: double.infinity,
@@ -242,6 +247,7 @@ class ListSectionInsetExample2 extends StatelessWidget {
           ),
           CupertinoListTile.notched(
             title: const Text('6号車'),
+            subtitle: const Text('快適'),
             leading: Container(
               width: double.infinity,
               height: double.infinity,
@@ -258,6 +264,7 @@ class ListSectionInsetExample2 extends StatelessWidget {
           ),
           CupertinoListTile.notched(
             title: const Text('7号車'),
+            subtitle: const Text('快適'),
             leading: Container(
               width: double.infinity,
               height: double.infinity,
@@ -274,6 +281,7 @@ class ListSectionInsetExample2 extends StatelessWidget {
           ),
           CupertinoListTile.notched(
             title: const Text('8号車'),
+            subtitle: const Text('快適'),
             leading: Container(
               width: double.infinity,
               height: double.infinity,
