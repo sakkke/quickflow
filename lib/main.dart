@@ -75,10 +75,13 @@ class ListSectionInsetExample extends StatelessWidget {
           CupertinoListTile.notched(
             title: const Text('湘南新宿ライン'),
             subtitle: const Text('路線'),
-            leading: Container(
-              width: double.infinity,
-              height: double.infinity,
-              color: CupertinoColors.activeGreen,
+            leading: ClipRRect(
+              borderRadius: BorderRadius.circular(7.0),
+              child: Container(
+                width: double.infinity,
+                height: double.infinity,
+                color: CupertinoColors.activeGreen,
+              ),
             ),
             trailing: const CupertinoListTileChevron(),
             onTap: () => Navigator.of(context).push(
@@ -150,10 +153,13 @@ class ListSectionInsetExample2 extends StatelessWidget {
           CupertinoListTile.notched(
             title: const Text('1号車'),
             subtitle: const Text('快適'),
-            leading: Container(
-              width: double.infinity,
-              height: double.infinity,
-              color: CupertinoColors.activeGreen,
+            leading: ClipRRect(
+              borderRadius: BorderRadius.circular(7.0),
+              child: Container(
+                width: double.infinity,
+                height: double.infinity,
+                color: CupertinoColors.activeGreen,
+              ),
             ),
             trailing: const CupertinoListTileChevron(),
             onTap: () => Navigator.of(context).push(
@@ -167,10 +173,13 @@ class ListSectionInsetExample2 extends StatelessWidget {
           CupertinoListTile.notched(
             title: const Text('2号車'),
             subtitle: const Text('快適'),
-            leading: Container(
-              width: double.infinity,
-              height: double.infinity,
-              color: CupertinoColors.activeGreen,
+            leading: ClipRRect(
+              borderRadius: BorderRadius.circular(7.0),
+              child: Container(
+                width: double.infinity,
+                height: double.infinity,
+                color: CupertinoColors.activeGreen,
+              ),
             ),
             trailing: const CupertinoListTileChevron(),
             onTap: () => Navigator.of(context).push(
@@ -184,10 +193,13 @@ class ListSectionInsetExample2 extends StatelessWidget {
           CupertinoListTile.notched(
             title: const Text('3号車'),
             subtitle: const Text('快適'),
-            leading: Container(
-              width: double.infinity,
-              height: double.infinity,
-              color: CupertinoColors.activeGreen,
+            leading: ClipRRect(
+              borderRadius: BorderRadius.circular(7.0),
+              child: Container(
+                width: double.infinity,
+                height: double.infinity,
+                color: CupertinoColors.activeGreen,
+              ),
             ),
             trailing: const CupertinoListTileChevron(),
             onTap: () => Navigator.of(context).push(
@@ -201,10 +213,13 @@ class ListSectionInsetExample2 extends StatelessWidget {
           CupertinoListTile.notched(
             title: const Text('4号車'),
             subtitle: const Text('快適'),
-            leading: Container(
-              width: double.infinity,
-              height: double.infinity,
-              color: CupertinoColors.activeGreen,
+            leading: ClipRRect(
+              borderRadius: BorderRadius.circular(7.0),
+              child: Container(
+                width: double.infinity,
+                height: double.infinity,
+                color: CupertinoColors.activeGreen,
+              ),
             ),
             trailing: const CupertinoListTileChevron(),
             onTap: () => Navigator.of(context).push(
@@ -218,10 +233,13 @@ class ListSectionInsetExample2 extends StatelessWidget {
           CupertinoListTile.notched(
             title: const Text('5号車'),
             subtitle: const Text('快適'),
-            leading: Container(
-              width: double.infinity,
-              height: double.infinity,
-              color: CupertinoColors.activeGreen,
+            leading: ClipRRect(
+              borderRadius: BorderRadius.circular(7.0),
+              child: Container(
+                width: double.infinity,
+                height: double.infinity,
+                color: CupertinoColors.activeGreen,
+              ),
             ),
             trailing: const CupertinoListTileChevron(),
             onTap: () => Navigator.of(context).push(
@@ -235,10 +253,13 @@ class ListSectionInsetExample2 extends StatelessWidget {
           CupertinoListTile.notched(
             title: const Text('6号車'),
             subtitle: const Text('快適'),
-            leading: Container(
-              width: double.infinity,
-              height: double.infinity,
-              color: CupertinoColors.activeGreen,
+            leading: ClipRRect(
+              borderRadius: BorderRadius.circular(7.0),
+              child: Container(
+                width: double.infinity,
+                height: double.infinity,
+                color: CupertinoColors.activeGreen,
+              ),
             ),
             trailing: const CupertinoListTileChevron(),
             onTap: () => Navigator.of(context).push(
@@ -252,10 +273,13 @@ class ListSectionInsetExample2 extends StatelessWidget {
           CupertinoListTile.notched(
             title: const Text('7号車'),
             subtitle: const Text('快適'),
-            leading: Container(
-              width: double.infinity,
-              height: double.infinity,
-              color: CupertinoColors.activeGreen,
+            leading: ClipRRect(
+              borderRadius: BorderRadius.circular(7.0),
+              child: Container(
+                width: double.infinity,
+                height: double.infinity,
+                color: CupertinoColors.activeGreen,
+              ),
             ),
             trailing: const CupertinoListTileChevron(),
             onTap: () => Navigator.of(context).push(
@@ -269,10 +293,13 @@ class ListSectionInsetExample2 extends StatelessWidget {
           CupertinoListTile.notched(
             title: const Text('8号車'),
             subtitle: const Text('快適'),
-            leading: Container(
-              width: double.infinity,
-              height: double.infinity,
-              color: CupertinoColors.activeGreen,
+            leading: ClipRRect(
+              borderRadius: BorderRadius.circular(7.0),
+              child: Container(
+                width: double.infinity,
+                height: double.infinity,
+                color: CupertinoColors.activeGreen,
+              ),
             ),
             trailing: const CupertinoListTileChevron(),
             onTap: () => Navigator.of(context).push(
