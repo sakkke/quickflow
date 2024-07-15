@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
             navigationBar: CupertinoNavigationBar(
               middle: Text('混雑回避アプリ'),
             ),
-            child: ListSectionInsetExample(),
+            child: SafeArea(child: ListSectionInsetExample()),
           );
         },
         '/route-selection': (BuildContext context) {
