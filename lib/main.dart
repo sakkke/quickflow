@@ -371,15 +371,11 @@ class _SegmentedControlExampleState extends State<SegmentedControlExample> {
           },
           children: const <Sky, Widget>{
             Sky.midnight: Text(
-              'Midnight',
+              '上り',
               style: TextStyle(color: CupertinoColors.white),
             ),
             Sky.viridian: Text(
-              'Viridian',
-              style: TextStyle(color: CupertinoColors.white),
-            ),
-            Sky.cerulean: Text(
-              'Cerulean',
+              '下り',
               style: TextStyle(color: CupertinoColors.white),
             ),
           },
