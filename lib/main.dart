@@ -108,6 +108,22 @@ class ListSectionInsetExample extends StatelessWidget {
               ),
             ),
           ),
+          CupertinoListTile.notched(
+            title: const Text('7:05'),
+            leading: Container(
+              width: double.infinity,
+              height: double.infinity,
+              color: CupertinoColors.activeGreen,
+            ),
+            trailing: const CupertinoListTileChevron(),
+            onTap: () => Navigator.of(context).push(
+              CupertinoPageRoute<void>(
+                builder: (BuildContext context) {
+                  return const _SecondPage(text: 'Open pull request');
+                },
+              ),
+            ),
+          ),
         ],
       ),
     );
