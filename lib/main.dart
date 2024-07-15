@@ -158,10 +158,10 @@ class ListSectionInsetExample2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       child: CupertinoListSection.insetGrouped(
-        header: const Text('発車駅情報'),
+        header: const Text('混雑情報'),
         children: <CupertinoListTile>[
           CupertinoListTile.notched(
-            title: const Text('湘南新宿ライン'),
+            title: const Text('1号車'),
             leading: Container(
               width: double.infinity,
               height: double.infinity,
@@ -177,33 +177,103 @@ class ListSectionInsetExample2 extends StatelessWidget {
             ),
           ),
           CupertinoListTile.notched(
-            title: const Text('方向'),
+            title: const Text('2号車'),
             leading: Container(
               width: double.infinity,
               height: double.infinity,
-              color: CupertinoColors.systemRed,
+              color: CupertinoColors.activeGreen,
             ),
-            additionalInfo: const Text('Not available'),
-          ),
-          CupertinoListTile.notched(
-            title: const Text('藤沢'),
-            leading: Container(
-              width: double.infinity,
-              height: double.infinity,
-              color: CupertinoColors.activeOrange,
-            ),
-            additionalInfo: const Text('12 days ago'),
             trailing: const CupertinoListTileChevron(),
             onTap: () => Navigator.of(context).push(
               CupertinoPageRoute<void>(
                 builder: (BuildContext context) {
-                  return const _SecondPage(text: 'Last commit');
+                  return const _SecondPage(text: 'Open pull request');
                 },
               ),
             ),
           ),
           CupertinoListTile.notched(
-            title: const Text('7:05'),
+            title: const Text('3号車'),
+            leading: Container(
+              width: double.infinity,
+              height: double.infinity,
+              color: CupertinoColors.activeGreen,
+            ),
+            trailing: const CupertinoListTileChevron(),
+            onTap: () => Navigator.of(context).push(
+              CupertinoPageRoute<void>(
+                builder: (BuildContext context) {
+                  return const _SecondPage(text: 'Open pull request');
+                },
+              ),
+            ),
+          ),
+          CupertinoListTile.notched(
+            title: const Text('4号車'),
+            leading: Container(
+              width: double.infinity,
+              height: double.infinity,
+              color: CupertinoColors.activeGreen,
+            ),
+            trailing: const CupertinoListTileChevron(),
+            onTap: () => Navigator.of(context).push(
+              CupertinoPageRoute<void>(
+                builder: (BuildContext context) {
+                  return const _SecondPage(text: 'Open pull request');
+                },
+              ),
+            ),
+          ),
+          CupertinoListTile.notched(
+            title: const Text('5号車'),
+            leading: Container(
+              width: double.infinity,
+              height: double.infinity,
+              color: CupertinoColors.activeGreen,
+            ),
+            trailing: const CupertinoListTileChevron(),
+            onTap: () => Navigator.of(context).push(
+              CupertinoPageRoute<void>(
+                builder: (BuildContext context) {
+                  return const _SecondPage(text: 'Open pull request');
+                },
+              ),
+            ),
+          ),
+          CupertinoListTile.notched(
+            title: const Text('6号車'),
+            leading: Container(
+              width: double.infinity,
+              height: double.infinity,
+              color: CupertinoColors.activeGreen,
+            ),
+            trailing: const CupertinoListTileChevron(),
+            onTap: () => Navigator.of(context).push(
+              CupertinoPageRoute<void>(
+                builder: (BuildContext context) {
+                  return const _SecondPage(text: 'Open pull request');
+                },
+              ),
+            ),
+          ),
+          CupertinoListTile.notched(
+            title: const Text('7号車'),
+            leading: Container(
+              width: double.infinity,
+              height: double.infinity,
+              color: CupertinoColors.activeGreen,
+            ),
+            trailing: const CupertinoListTileChevron(),
+            onTap: () => Navigator.of(context).push(
+              CupertinoPageRoute<void>(
+                builder: (BuildContext context) {
+                  return const _SecondPage(text: 'Open pull request');
+                },
+              ),
+            ),
+          ),
+          CupertinoListTile.notched(
+            title: const Text('8号車'),
             leading: Container(
               width: double.infinity,
               height: double.infinity,
