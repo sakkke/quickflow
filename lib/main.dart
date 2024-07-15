@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         '/': (BuildContext context) {
           return const CupertinoPageScaffold(
+            backgroundColor: CupertinoColors.systemGrey6,
             navigationBar: CupertinoNavigationBar(
               middle: Text('混雑回避アプリ'),
             ),
