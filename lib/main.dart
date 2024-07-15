@@ -10,14 +10,49 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const CupertinoApp(
-      home: CupertinoPageScaffold(
-        navigationBar: CupertinoNavigationBar(
-          middle: Text('Home'),
-        ),
-        child: Center(child: Icon(CupertinoIcons.share)),
-      ),
-      debugShowCheckedModeBanner: false,
+    return CupertinoApp(
+      routes: <String, WidgetBuilder>{
+        '/': (BuildContext context) {
+          return const CupertinoPageScaffold(
+            navigationBar: CupertinoNavigationBar(
+              middle: Text('混雑回避アプリ'),
+            ),
+            child: Center(child: Icon(CupertinoIcons.share)),
+          );
+        },
+        '/route-selection': (BuildContext context) {
+          return const CupertinoPageScaffold(
+            navigationBar: CupertinoNavigationBar(
+              middle: Text('路線'),
+            ),
+            child: Center(child: Icon(CupertinoIcons.share)),
+          );
+        },
+        '/time-selection': (BuildContext context) {
+          return const CupertinoPageScaffold(
+            navigationBar: CupertinoNavigationBar(
+              middle: Text('発車時刻'),
+            ),
+            child: Center(child: Icon(CupertinoIcons.share)),
+          );
+        },
+        '/station-selection': (BuildContext context) {
+          return const CupertinoPageScaffold(
+            navigationBar: CupertinoNavigationBar(
+              middle: Text('発車駅'),
+            ),
+            child: Center(child: Icon(CupertinoIcons.share)),
+          );
+        },
+        '/information': (BuildContext context) {
+          return const CupertinoPageScaffold(
+            navigationBar: CupertinoNavigationBar(
+              middle: Text('n号車'),
+            ),
+            child: Center(child: Icon(CupertinoIcons.share)),
+          );
+        }
+      },
     );
   }
 }
