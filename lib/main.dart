@@ -74,6 +74,7 @@ class ListSectionInsetExample extends StatelessWidget {
         children: <CupertinoListTile>[
           CupertinoListTile.notched(
             title: const Text('湘南新宿ライン'),
+            subtitle: const Text('路線'),
             leading: Container(
               width: double.infinity,
               height: double.infinity,
@@ -99,23 +100,24 @@ class ListSectionInsetExample extends StatelessWidget {
           ),
           CupertinoListTile.notched(
             title: const Text('藤沢'),
+            subtitle: const Text('発車駅'),
             leading: Container(
               width: double.infinity,
               height: double.infinity,
-              color: CupertinoColors.activeOrange,
+              color: CupertinoColors.activeGreen,
             ),
-            additionalInfo: const Text('12 days ago'),
             trailing: const CupertinoListTileChevron(),
             onTap: () => Navigator.of(context).push(
               CupertinoPageRoute<void>(
                 builder: (BuildContext context) {
-                  return const _SecondPage(text: 'Last commit');
+                  return const _SecondPage(text: 'Open pull request');
                 },
               ),
             ),
           ),
           CupertinoListTile.notched(
             title: const Text('7:05'),
+            subtitle: const Text('発車時刻'),
             leading: Container(
               width: double.infinity,
               height: double.infinity,
