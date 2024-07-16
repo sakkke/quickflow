@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
           return const CupertinoPageScaffold(
             backgroundColor: CupertinoColors.systemGrey6,
             navigationBar: CupertinoNavigationBar(
-              middle: Text('混雑回避アプリ'),
+              middle: Text('Quickflow'),
             ),
             child: SafeArea(child: Column(
               children: [
