@@ -97,7 +97,7 @@ class ListSectionInsetExample2 extends StatelessWidget {
             onTap: () => Navigator.of(context).push(
               CupertinoPageRoute<void>(
                 builder: (BuildContext context) {
-                  return const _SecondPage(text: 'Open pull request');
+                  return const _SecondPage2(text: 'Open pull request');
                 },
               ),
             ),
@@ -117,7 +117,7 @@ class ListSectionInsetExample2 extends StatelessWidget {
             onTap: () => Navigator.of(context).push(
               CupertinoPageRoute<void>(
                 builder: (BuildContext context) {
-                  return const _SecondPage(text: 'Open pull request');
+                  return const _SecondPage2(text: 'Open pull request');
                 },
               ),
             ),
@@ -137,7 +137,7 @@ class ListSectionInsetExample2 extends StatelessWidget {
             onTap: () => Navigator.of(context).push(
               CupertinoPageRoute<void>(
                 builder: (BuildContext context) {
-                  return const _SecondPage(text: 'Open pull request');
+                  return const _SecondPage2(text: 'Open pull request');
                 },
               ),
             ),
@@ -157,7 +157,7 @@ class ListSectionInsetExample2 extends StatelessWidget {
             onTap: () => Navigator.of(context).push(
               CupertinoPageRoute<void>(
                 builder: (BuildContext context) {
-                  return const _SecondPage(text: 'Open pull request');
+                  return const _SecondPage2(text: 'Open pull request');
                 },
               ),
             ),
@@ -177,7 +177,7 @@ class ListSectionInsetExample2 extends StatelessWidget {
             onTap: () => Navigator.of(context).push(
               CupertinoPageRoute<void>(
                 builder: (BuildContext context) {
-                  return const _SecondPage(text: 'Open pull request');
+                  return const _SecondPage2(text: 'Open pull request');
                 },
               ),
             ),
@@ -197,7 +197,7 @@ class ListSectionInsetExample2 extends StatelessWidget {
             onTap: () => Navigator.of(context).push(
               CupertinoPageRoute<void>(
                 builder: (BuildContext context) {
-                  return const _SecondPage(text: 'Open pull request');
+                  return const _SecondPage2(text: 'Open pull request');
                 },
               ),
             ),
@@ -217,7 +217,7 @@ class ListSectionInsetExample2 extends StatelessWidget {
             onTap: () => Navigator.of(context).push(
               CupertinoPageRoute<void>(
                 builder: (BuildContext context) {
-                  return const _SecondPage(text: 'Open pull request');
+                  return const _SecondPage2(text: 'Open pull request');
                 },
               ),
             ),
@@ -237,7 +237,7 @@ class ListSectionInsetExample2 extends StatelessWidget {
             onTap: () => Navigator.of(context).push(
               CupertinoPageRoute<void>(
                 builder: (BuildContext context) {
-                  return const _SecondPage(text: 'Open pull request');
+                  return const _SecondPage2(text: 'Open pull request');
                 },
               ),
             ),
