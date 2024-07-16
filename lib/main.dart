@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 
 import 'list_section_inset_example.dart';
 import 'list_section_inset_example2.dart';
-import 'segmented_control_example.dart';
 
 enum Sky { midnight, viridian, cerulean }
 

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:quickflow/main.dart';
+
+import 'segmented_control_example.dart';
 
 class ListSectionInsetExample extends StatelessWidget {
   const ListSectionInsetExample({super.key});
