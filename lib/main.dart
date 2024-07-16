@@ -3,14 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'list_section_inset_example.dart';
 import 'list_section_inset_example2.dart';
 
-enum Sky { midnight, viridian, cerulean }
-
-Map<Sky, Color> skyColors = <Sky, Color>{
-  Sky.midnight: const Color(0xff191970),
-  Sky.viridian: const Color(0xff40826d),
-  Sky.cerulean: const Color(0xff007ba7),
-};
-
 void main() {
   runApp(const MyApp());
 }

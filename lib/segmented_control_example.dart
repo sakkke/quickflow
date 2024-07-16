@@ -1,5 +1,12 @@
 import 'package:flutter/cupertino.dart';
-import 'package:quickflow/main.dart';
+
+enum Sky { midnight, viridian, cerulean }
+
+Map<Sky, Color> skyColors = <Sky, Color>{
+  Sky.midnight: const Color(0xff191970),
+  Sky.viridian: const Color(0xff40826d),
+  Sky.cerulean: const Color(0xff007ba7),
+};
 
 class SegmentedControlExample extends StatefulWidget {
   const SegmentedControlExample({super.key});
