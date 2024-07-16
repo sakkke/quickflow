@@ -1,12 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-enum Sky { midnight, viridian, cerulean }
-
-Map<Sky, Color> skyColors = <Sky, Color>{
-  Sky.midnight: const Color(0xff191970),
-  Sky.viridian: const Color(0xff40826d),
-  Sky.cerulean: const Color(0xff007ba7),
-};
+enum Direction { up, down }
 
 class SegmentedControlExample extends StatefulWidget {
   const SegmentedControlExample({super.key});
@@ -17,29 +11,29 @@ class SegmentedControlExample extends StatefulWidget {
 }
 
 class _SegmentedControlExampleState extends State<SegmentedControlExample> {
-  Sky _selectedSegment = Sky.midnight;
+  Direction _selectedSegment = Direction.up;
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoSlidingSegmentedControl<Sky>(
+    return CupertinoSlidingSegmentedControl<Direction>(
       backgroundColor: CupertinoColors.systemGrey2,
-      thumbColor: skyColors[_selectedSegment]!,
+      thumbColor: CupertinoColors.activeGreen,
       // This represents the currently selected segmented control.
       groupValue: _selectedSegment,
       // Callback that sets the selected segmented control.
-      onValueChanged: (Sky? value) {
+      onValueChanged: (Direction? value) {
         if (value != null) {
           setState(() {
             _selectedSegment = value;
           });
         }
       },
-      children: const <Sky, Widget>{
-        Sky.midnight: Text(
+      children: const <Direction, Widget>{
+        Direction.up: Text(
           '上り',
           style: TextStyle(color: CupertinoColors.white),
         ),
-        Sky.viridian: Text(
+        Direction.down: Text(
           '下り',
           style: TextStyle(color: CupertinoColors.white),
         ),
