@@ -21,11 +21,15 @@ class MyApp extends StatelessWidget {
             navigationBar: CupertinoNavigationBar(
               middle: Text('Quickflow'),
             ),
-            child: SafeArea(child: Column(
-              children: [
-                ListSectionInsetExample(),
-                ListSectionInsetExample2(),
-              ],
+            child: SafeArea(child: CupertinoScrollbar(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    ListSectionInsetExample(),
+                    ListSectionInsetExample2(),
+                  ],
+                ),
+              ),
             )),
           );
         },
