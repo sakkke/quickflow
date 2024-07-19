@@ -11,7 +11,7 @@ class ListSectionInsetExample extends StatelessWidget {
       child: CupertinoListSection.insetGrouped(
         header: const Text('発車駅情報'),
         children: <CupertinoListTile>[
-          CupertinoListTile.notched(
+          CupertinoListTile(
             title: const Text('湘南新宿ライン'),
             subtitle: const Text('路線'),
             leading: ClipRRect(
@@ -31,11 +31,11 @@ class ListSectionInsetExample extends StatelessWidget {
               ),
             ),
           ),
-          CupertinoListTile.notched(
+          CupertinoListTile(
             title: const Text('方向'),
             additionalInfo: const SegmentedControlExample(),
           ),
-          CupertinoListTile.notched(
+          CupertinoListTile(
             title: const Text('藤沢'),
             subtitle: const Text('発車駅'),
             trailing: const CupertinoListTileChevron(),
@@ -47,7 +47,7 @@ class ListSectionInsetExample extends StatelessWidget {
               ),
             ),
           ),
-          CupertinoListTile.notched(
+          CupertinoListTile(
             title: const Text('7:05'),
             subtitle: const Text('発車時刻'),
             trailing: const CupertinoListTileChevron(),
@@ -96,7 +96,7 @@ class _RouteSelectionPage extends StatelessWidget {
           child: SingleChildScrollView(
             child: CupertinoListSection(
               children: <CupertinoListTile>[
-                CupertinoListTile.notched(
+                CupertinoListTile(
                   title: const Text('湘南新宿ライン'),
                   subtitle: const Text('現在'),
                   leading: ClipRRect(
