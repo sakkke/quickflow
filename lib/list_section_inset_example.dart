@@ -26,7 +26,7 @@ class ListSectionInsetExample extends StatelessWidget {
             onTap: () => Navigator.of(context).push(
               CupertinoPageRoute<void>(
                 builder: (BuildContext context) {
-                  return const _SecondPage(text: 'Open pull request');
+                  return const _RouteSelectionPage();
                 },
               ),
             ),
@@ -42,7 +42,7 @@ class ListSectionInsetExample extends StatelessWidget {
             onTap: () => Navigator.of(context).push(
               CupertinoPageRoute<void>(
                 builder: (BuildContext context) {
-                  return const _SecondPage(text: 'Open pull request');
+                  return const _RouteSelectionPage();
                 },
               ),
             ),
@@ -75,6 +75,45 @@ class _SecondPage extends StatelessWidget {
     return CupertinoPageScaffold(
       child: Center(
         child: Text(text),
+      ),
+    );
+  }
+}
+
+class _RouteSelectionPage extends StatelessWidget {
+  const _RouteSelectionPage();
+
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoPageScaffold(
+      backgroundColor: CupertinoColors.secondarySystemBackground,
+      navigationBar: const CupertinoNavigationBar(
+        automaticallyImplyLeading: true,
+        middle: Text("駅選択"),
+      ),
+      child: SafeArea(
+        child: CupertinoScrollbar(
+          child: SingleChildScrollView(
+            child: CupertinoListSection.insetGrouped(
+              header: const Text('混雑情報'),
+              children: <CupertinoListTile>[
+                CupertinoListTile.notched(
+                  title: const Text('1号車'),
+                  subtitle: const Text('快適'),
+                  leading: ClipRRect(
+                    borderRadius: BorderRadius.circular(7.0),
+                    child: Container(
+                      width: double.infinity,
+                      height: double.infinity,
+                      color: CupertinoColors.activeGreen,
+                    ),
+                  ),
+                  trailing: const CupertinoListTileChevron(),
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
