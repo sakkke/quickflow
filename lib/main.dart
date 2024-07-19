@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         '/': (BuildContext context) {
           return const CupertinoPageScaffold(
-            backgroundColor: CupertinoColors.systemGrey6,
+            backgroundColor: CupertinoColors.secondarySystemBackground,
             navigationBar: CupertinoNavigationBar(
               middle: Text('Quickflow'),
             ),
