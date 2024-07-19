@@ -31,9 +31,9 @@ class ListSectionInsetExample extends StatelessWidget {
               ),
             ),
           ),
-          CupertinoListTile(
-            title: const Text('方向'),
-            additionalInfo: const SegmentedControlExample(),
+          const CupertinoListTile(
+            title: Text('方向'),
+            additionalInfo: SegmentedControlExample(),
           ),
           CupertinoListTile(
             title: const Text('藤沢'),
