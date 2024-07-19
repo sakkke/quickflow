@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:quickflow/main.dart';
 
 class ListSectionInsetExample2 extends StatelessWidget {
   const ListSectionInsetExample2({super.key});
