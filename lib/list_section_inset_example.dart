@@ -94,12 +94,11 @@ class _RouteSelectionPage extends StatelessWidget {
       child: SafeArea(
         child: CupertinoScrollbar(
           child: SingleChildScrollView(
-            child: CupertinoListSection.insetGrouped(
-              header: const Text('混雑情報'),
+            child: CupertinoListSection(
               children: <CupertinoListTile>[
                 CupertinoListTile.notched(
-                  title: const Text('1号車'),
-                  subtitle: const Text('快適'),
+                  title: const Text('湘南新宿ライン'),
+                  subtitle: const Text('現在'),
                   leading: ClipRRect(
                     borderRadius: BorderRadius.circular(7.0),
                     child: Container(
@@ -108,7 +107,6 @@ class _RouteSelectionPage extends StatelessWidget {
                       color: CupertinoColors.activeGreen,
                     ),
                   ),
-                  trailing: const CupertinoListTileChevron(),
                 ),
               ],
             ),
