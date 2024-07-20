@@ -1,4 +1,4 @@
 ```mermaid
 flowchart TD
-    A[さかい] --> B[ｋ]
+    A[さ] --> B[ｋ]
 ```
