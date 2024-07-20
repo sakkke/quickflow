@@ -2,6 +2,9 @@ import 'package:flutter/cupertino.dart';
 
 import 'segmented_control_example.dart';
 
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+
 class ListSectionInsetExample extends StatelessWidget {
   const ListSectionInsetExample({super.key});
 
@@ -80,8 +83,36 @@ class _SecondPage extends StatelessWidget {
   }
 }
 
-class _RouteSelectionPage extends StatelessWidget {
+class _RouteSelectionPage extends StatefulWidget {
   const _RouteSelectionPage();
+
+  @override
+  _RouteSelectionPageState createState() => _RouteSelectionPageState();
+}
+
+class _RouteSelectionPageState extends State<_RouteSelectionPage> {
+  List<String> stations = [];
+  bool isLoading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    fetchStations();
+  }
+
+  Future<void> fetchStations() async {
+    final response = await http.get(Uri.parse('https://quickflowapp.design-perspective.com/api/v1/stations'));
+
+    if (response.statusCode == 200) {
+      final Map<String, dynamic> data = json.decode(response.body);
+      setState(() {
+        stations = (data['stations'] as List<dynamic>).map((station) => station['name'] as String).toList();
+        isLoading = false;
+      });
+    } else {
+      throw Exception('Failed to load stations');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -94,22 +125,22 @@ class _RouteSelectionPage extends StatelessWidget {
       child: SafeArea(
         child: CupertinoScrollbar(
           child: SingleChildScrollView(
-            child: CupertinoListSection(
-              children: <CupertinoListTile>[
-                CupertinoListTile(
-                  title: const Text('湘南新宿ライン'),
-                  subtitle: const Text('現在'),
-                  leading: ClipRRect(
-                    borderRadius: BorderRadius.circular(7.0),
-                    child: Container(
-                      width: double.infinity,
-                      height: double.infinity,
-                      color: CupertinoColors.activeGreen,
+            child: isLoading
+              ? const Center(child: CupertinoActivityIndicator())
+              : CupertinoListSection(
+                  children: stations.map<CupertinoListTile>((station) => CupertinoListTile(
+                    title: Text(station),
+                    subtitle: const Text('現在'),
+                    leading: ClipRRect(
+                      borderRadius: BorderRadius.circular(7.0),
+                      child: Container(
+                        width: double.infinity,
+                        height: double.infinity,
+                        color: CupertinoColors.activeGreen,
+                      ),
                     ),
-                  ),
+                  )).toList(),
                 ),
-              ],
-            ),
           ),
         ),
       ),
