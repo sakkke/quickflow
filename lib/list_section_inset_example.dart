@@ -130,7 +130,6 @@ class _RouteSelectionPageState extends State<_RouteSelectionPage> {
               : CupertinoListSection(
                   children: stations.map<CupertinoListTile>((station) => CupertinoListTile(
                     title: Text(station),
-                    subtitle: const Text('現在'),
                     leading: ClipRRect(
                       borderRadius: BorderRadius.circular(7.0),
                       child: Container(
