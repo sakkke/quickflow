@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:quickflow/search_text_field_example.dart';
 
 import 'segmented_control_example.dart';
 
@@ -125,21 +126,24 @@ class _RouteSelectionPageState extends State<_RouteSelectionPage> {
       child: SafeArea(
         child: CupertinoScrollbar(
           child: SingleChildScrollView(
-            child: isLoading
-              ? const Center(child: CupertinoActivityIndicator())
-              : CupertinoListSection(
-                  children: stations.map<CupertinoListTile>((station) => CupertinoListTile(
-                    title: Text(station),
-                    leading: ClipRRect(
-                      borderRadius: BorderRadius.circular(7.0),
-                      child: Container(
-                        width: double.infinity,
-                        height: double.infinity,
-                        color: CupertinoColors.activeGreen,
+            child: Column(children: [
+              const SearchTextFieldExample(),
+              isLoading
+                ? const Center(child: CupertinoActivityIndicator())
+                : CupertinoListSection(
+                    children: stations.map<CupertinoListTile>((station) => CupertinoListTile(
+                      title: Text(station),
+                      leading: ClipRRect(
+                        borderRadius: BorderRadius.circular(7.0),
+                        child: Container(
+                          width: double.infinity,
+                          height: double.infinity,
+                          color: CupertinoColors.activeGreen,
+                        ),
                       ),
-                    ),
-                  )).toList(),
-                ),
+                    )).toList(),
+                  ),
+            ],)
           ),
         ),
       ),
