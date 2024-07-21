@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:quickflow/search_text_field_example.dart';
+import 'package:quickflow/search_text_field_page.dart';
 
 import 'direction_segmented_control.dart';
 
