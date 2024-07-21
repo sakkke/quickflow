@@ -13,7 +13,7 @@ class CongestionInfoPage extends StatelessWidget {
             context,
             title: '${index + 1}号車',
             subtitle: '快適',
-            destination: const _SecondPage2(text: 'Open pull request'),
+            destination: const _InformationPage(),
           );
         }),
       ),
@@ -55,6 +55,40 @@ class _SecondPage2 extends StatelessWidget {
     return CupertinoPageScaffold(
       child: Center(
         child: Text(text),
+      ),
+    );
+  }
+}
+
+class _InformationPage extends StatelessWidget {
+  const _InformationPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoPageScaffold(
+      navigationBar: const CupertinoNavigationBar(
+        middle: Text('時刻選択'),
+      ),
+      child: SafeArea(
+        child: Column(
+          children: [
+            Expanded(
+              child: CupertinoScrollbar(
+                child: ListView.builder(
+                  itemCount: 24, // 時刻の数をここに設定 (例: 24時間)
+                  itemBuilder: (context, index) {
+                    return CupertinoListTile(
+                      title: Center(child: Text('${index}:00')), // 時刻を中央揃え
+                      onTap: () {
+                        // 時刻が選択されたときの処理
+                      },
+                    );
+                  },
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
