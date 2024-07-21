@@ -8,168 +8,38 @@ class ListSectionInsetExample2 extends StatelessWidget {
     return CupertinoPageScaffold(
       child: CupertinoListSection.insetGrouped(
         header: const Text('混雑情報'),
-        children: <CupertinoListTile>[
-          CupertinoListTile(
-            title: const Text('1号車'),
-            subtitle: const Text('快適'),
-            leading: ClipRRect(
-              borderRadius: BorderRadius.circular(7.0),
-              child: Container(
-                width: double.infinity,
-                height: double.infinity,
-                color: CupertinoColors.activeGreen,
-              ),
-            ),
-            trailing: const CupertinoListTileChevron(),
-            onTap: () => Navigator.of(context).push(
-              CupertinoPageRoute<void>(
-                builder: (BuildContext context) {
-                  return const _SecondPage2(text: 'Open pull request');
-                },
-              ),
-            ),
-          ),
-          CupertinoListTile(
-            title: const Text('2号車'),
-            subtitle: const Text('快適'),
-            leading: ClipRRect(
-              borderRadius: BorderRadius.circular(7.0),
-              child: Container(
-                width: double.infinity,
-                height: double.infinity,
-                color: CupertinoColors.activeGreen,
-              ),
-            ),
-            trailing: const CupertinoListTileChevron(),
-            onTap: () => Navigator.of(context).push(
-              CupertinoPageRoute<void>(
-                builder: (BuildContext context) {
-                  return const _SecondPage2(text: 'Open pull request');
-                },
-              ),
-            ),
-          ),
-          CupertinoListTile(
-            title: const Text('3号車'),
-            subtitle: const Text('快適'),
-            leading: ClipRRect(
-              borderRadius: BorderRadius.circular(7.0),
-              child: Container(
-                width: double.infinity,
-                height: double.infinity,
-                color: CupertinoColors.activeGreen,
-              ),
-            ),
-            trailing: const CupertinoListTileChevron(),
-            onTap: () => Navigator.of(context).push(
-              CupertinoPageRoute<void>(
-                builder: (BuildContext context) {
-                  return const _SecondPage2(text: 'Open pull request');
-                },
-              ),
-            ),
-          ),
-          CupertinoListTile(
-            title: const Text('4号車'),
-            subtitle: const Text('快適'),
-            leading: ClipRRect(
-              borderRadius: BorderRadius.circular(7.0),
-              child: Container(
-                width: double.infinity,
-                height: double.infinity,
-                color: CupertinoColors.activeGreen,
-              ),
-            ),
-            trailing: const CupertinoListTileChevron(),
-            onTap: () => Navigator.of(context).push(
-              CupertinoPageRoute<void>(
-                builder: (BuildContext context) {
-                  return const _SecondPage2(text: 'Open pull request');
-                },
-              ),
-            ),
-          ),
-          CupertinoListTile(
-            title: const Text('5号車'),
-            subtitle: const Text('快適'),
-            leading: ClipRRect(
-              borderRadius: BorderRadius.circular(7.0),
-              child: Container(
-                width: double.infinity,
-                height: double.infinity,
-                color: CupertinoColors.activeGreen,
-              ),
-            ),
-            trailing: const CupertinoListTileChevron(),
-            onTap: () => Navigator.of(context).push(
-              CupertinoPageRoute<void>(
-                builder: (BuildContext context) {
-                  return const _SecondPage2(text: 'Open pull request');
-                },
-              ),
-            ),
-          ),
-          CupertinoListTile(
-            title: const Text('6号車'),
-            subtitle: const Text('快適'),
-            leading: ClipRRect(
-              borderRadius: BorderRadius.circular(7.0),
-              child: Container(
-                width: double.infinity,
-                height: double.infinity,
-                color: CupertinoColors.activeGreen,
-              ),
-            ),
-            trailing: const CupertinoListTileChevron(),
-            onTap: () => Navigator.of(context).push(
-              CupertinoPageRoute<void>(
-                builder: (BuildContext context) {
-                  return const _SecondPage2(text: 'Open pull request');
-                },
-              ),
-            ),
-          ),
-          CupertinoListTile(
-            title: const Text('7号車'),
-            subtitle: const Text('快適'),
-            leading: ClipRRect(
-              borderRadius: BorderRadius.circular(7.0),
-              child: Container(
-                width: double.infinity,
-                height: double.infinity,
-                color: CupertinoColors.activeGreen,
-              ),
-            ),
-            trailing: const CupertinoListTileChevron(),
-            onTap: () => Navigator.of(context).push(
-              CupertinoPageRoute<void>(
-                builder: (BuildContext context) {
-                  return const _SecondPage2(text: 'Open pull request');
-                },
-              ),
-            ),
-          ),
-          CupertinoListTile(
-            title: const Text('8号車'),
-            subtitle: const Text('快適'),
-            leading: ClipRRect(
-              borderRadius: BorderRadius.circular(7.0),
-              child: Container(
-                width: double.infinity,
-                height: double.infinity,
-                color: CupertinoColors.activeGreen,
-              ),
-            ),
-            trailing: const CupertinoListTileChevron(),
-            onTap: () => Navigator.of(context).push(
-              CupertinoPageRoute<void>(
-                builder: (BuildContext context) {
-                  return const _SecondPage2(text: 'Open pull request');
-                },
-              ),
-            ),
-          ),
-        ],
+        children: List.generate(8, (index) {
+          return _buildListTile(
+            context,
+            title: '${index + 1}号車',
+            subtitle: '快適',
+            destination: const _SecondPage2(text: 'Open pull request'),
+          );
+        }),
+      ),
+    );
+  }
+
+  CupertinoListTile _buildListTile(BuildContext context,
+      {required String title,
+      required String subtitle,
+      required Widget destination}) {
+    return CupertinoListTile(
+      title: Text(title),
+      subtitle: Text(subtitle),
+      leading: ClipRRect(
+        borderRadius: BorderRadius.circular(7.0),
+        child: Container(
+          width: double.infinity,
+          height: double.infinity,
+          color: CupertinoColors.activeGreen,
+        ),
+      ),
+      trailing: const CupertinoListTileChevron(),
+      onTap: () => Navigator.of(context).push(
+        CupertinoPageRoute<void>(
+          builder: (BuildContext context) => destination,
+        ),
       ),
     );
   }
