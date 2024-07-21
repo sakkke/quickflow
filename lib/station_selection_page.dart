@@ -210,7 +210,7 @@ class _TimeSelectionPage extends StatelessWidget {
                   itemCount: 24, // 時刻の数をここに設定 (例: 24時間)
                   itemBuilder: (context, index) {
                     return CupertinoListTile(
-                      title: Text('${index}:00'),
+                      title: Center(child: Text('${index}:00')), // 時刻を中央揃え
                       onTap: () {
                         // 時刻が選択されたときの処理
                       },
