@@ -15,55 +15,53 @@ class ListSectionInsetExample extends StatelessWidget {
       child: CupertinoListSection.insetGrouped(
         header: const Text('発車駅情報'),
         children: <CupertinoListTile>[
-          CupertinoListTile(
-            title: const Text('湘南新宿ライン'),
-            subtitle: const Text('路線'),
-            leading: ClipRRect(
-              borderRadius: BorderRadius.circular(7.0),
-              child: Container(
-                width: double.infinity,
-                height: double.infinity,
-                color: CupertinoColors.activeGreen,
-              ),
-            ),
-            trailing: const CupertinoListTileChevron(),
-            onTap: () => Navigator.of(context).push(
-              CupertinoPageRoute<void>(
-                builder: (BuildContext context) {
-                  return const _RouteSelectionPage();
-                },
-              ),
-            ),
+          _buildListTile(
+            context,
+            title: '湘南新宿ライン',
+            subtitle: '路線',
+            destination: const _RouteSelectionPage(),
           ),
           const CupertinoListTile(
             title: Text('方向'),
             additionalInfo: SegmentedControlExample(),
           ),
-          CupertinoListTile(
-            title: const Text('藤沢'),
-            subtitle: const Text('発車駅'),
-            trailing: const CupertinoListTileChevron(),
-            onTap: () => Navigator.of(context).push(
-              CupertinoPageRoute<void>(
-                builder: (BuildContext context) {
-                  return const _RouteSelectionPage();
-                },
-              ),
-            ),
+          _buildListTile(
+            context,
+            title: '藤沢',
+            subtitle: '発車駅',
+            destination: const _RouteSelectionPage(),
           ),
-          CupertinoListTile(
-            title: const Text('7:05'),
-            subtitle: const Text('発車時刻'),
-            trailing: const CupertinoListTileChevron(),
-            onTap: () => Navigator.of(context).push(
-              CupertinoPageRoute<void>(
-                builder: (BuildContext context) {
-                  return const _SecondPage(text: 'Open pull request');
-                },
-              ),
-            ),
+          _buildListTile(
+            context,
+            title: '7:05',
+            subtitle: '発車時刻',
+            destination: const _SecondPage(text: 'Open pull request'),
           ),
         ],
+      ),
+    );
+  }
+
+  CupertinoListTile _buildListTile(BuildContext context,
+      {required String title,
+      required String subtitle,
+      required Widget destination}) {
+    return CupertinoListTile(
+      title: Text(title),
+      subtitle: Text(subtitle),
+      leading: ClipRRect(
+        borderRadius: BorderRadius.circular(7.0),
+        child: Container(
+          width: double.infinity,
+          height: double.infinity,
+          color: CupertinoColors.activeGreen,
+        ),
+      ),
+      trailing: const CupertinoListTileChevron(),
+      onTap: () => Navigator.of(context).push(
+        CupertinoPageRoute<void>(
+          builder: (BuildContext context) => destination,
+        ),
       ),
     );
   }
@@ -102,12 +100,15 @@ class _RouteSelectionPageState extends State<_RouteSelectionPage> {
   }
 
   Future<void> fetchStations() async {
-    final response = await http.get(Uri.parse('https://quickflowapp.design-perspective.com/api/v1/stations'));
+    final response = await http.get(Uri.parse(
+        'https://quickflowapp.design-perspective.com/api/v1/stations'));
 
     if (response.statusCode == 200) {
       final Map<String, dynamic> data = json.decode(response.body);
       setState(() {
-        stations = (data['stations'] as List<dynamic>).map((station) => station['name'] as String).toList();
+        stations = (data['stations'] as List<dynamic>)
+            .map((station) => station['name'] as String)
+            .toList();
         isLoading = false;
       });
     } else {
@@ -126,24 +127,29 @@ class _RouteSelectionPageState extends State<_RouteSelectionPage> {
       child: SafeArea(
         child: CupertinoScrollbar(
           child: SingleChildScrollView(
-            child: Column(children: [
-              const SearchTextFieldExample(),
-              isLoading
-                ? const Center(child: CupertinoActivityIndicator())
-                : CupertinoListSection(
-                    children: stations.map<CupertinoListTile>((station) => CupertinoListTile(
-                      title: Text(station),
-                      leading: ClipRRect(
-                        borderRadius: BorderRadius.circular(7.0),
-                        child: Container(
-                          width: double.infinity,
-                          height: double.infinity,
-                          color: CupertinoColors.activeGreen,
-                        ),
+            child: Column(
+              children: [
+                const SearchTextFieldExample(),
+                isLoading
+                    ? const Center(child: CupertinoActivityIndicator())
+                    : CupertinoListSection(
+                        children: stations
+                            .map<CupertinoListTile>((station) =>
+                                CupertinoListTile(
+                                  title: Text(station),
+                                  leading: ClipRRect(
+                                    borderRadius: BorderRadius.circular(7.0),
+                                    child: Container(
+                                      width: double.infinity,
+                                      height: double.infinity,
+                                      color: CupertinoColors.activeGreen,
+                                    ),
+                                  ),
+                                ))
+                            .toList(),
                       ),
-                    )).toList(),
-                  ),
-            ],)
+              ],
+            ),
           ),
         ),
       ),
