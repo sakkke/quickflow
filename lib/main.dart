@@ -15,57 +15,42 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return CupertinoApp(
       routes: <String, WidgetBuilder>{
-        '/': (BuildContext context) {
-          return const CupertinoPageScaffold(
-            backgroundColor: CupertinoColors.secondarySystemBackground,
-            navigationBar: CupertinoNavigationBar(
-              middle: Text('Quickflow'),
-            ),
-            child: SafeArea(child: CupertinoScrollbar(
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    ListSectionInsetExample(),
-                    ListSectionInsetExample2(),
-                  ],
-                ),
-              ),
-            )),
-          );
-        },
-        '/route-selection': (BuildContext context) {
-          return const CupertinoPageScaffold(
-            navigationBar: CupertinoNavigationBar(
-              middle: Text('路線'),
-            ),
-            child: Center(child: Icon(CupertinoIcons.share)),
-          );
-        },
-        '/time-selection': (BuildContext context) {
-          return const CupertinoPageScaffold(
-            navigationBar: CupertinoNavigationBar(
-              middle: Text('発車時刻'),
-            ),
-            child: Center(child: Icon(CupertinoIcons.share)),
-          );
-        },
-        '/station-selection': (BuildContext context) {
-          return const CupertinoPageScaffold(
-            navigationBar: CupertinoNavigationBar(
-              middle: Text('発車駅'),
-            ),
-            child: Center(child: Icon(CupertinoIcons.share)),
-          );
-        },
-        '/information': (BuildContext context) {
-          return const CupertinoPageScaffold(
-            navigationBar: CupertinoNavigationBar(
-              middle: Text('n号車'),
-            ),
-            child: Center(child: Icon(CupertinoIcons.share)),
-          );
-        }
+        '/': (BuildContext context) => buildHomePage(),
+        '/route-selection': (BuildContext context) => buildPage('路線'),
+        '/time-selection': (BuildContext context) => buildPage('発車時刻'),
+        '/station-selection': (BuildContext context) => buildPage('発車駅'),
+        '/information': (BuildContext context) => buildPage('n号車'),
       },
+    );
+  }
+
+  Widget buildHomePage() {
+    return const CupertinoPageScaffold(
+      backgroundColor: CupertinoColors.secondarySystemBackground,
+      navigationBar: CupertinoNavigationBar(
+        middle: Text('Quickflow'),
+      ),
+      child: SafeArea(
+        child: CupertinoScrollbar(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                ListSectionInsetExample(),
+                ListSectionInsetExample2(),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget buildPage(String title) {
+    return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        middle: Text(title),
+      ),
+      child: const Center(child: Icon(CupertinoIcons.share)),
     );
   }
 }
