@@ -29,7 +29,7 @@ class StationSelectionPage extends StatelessWidget {
             context,
             title: '藤沢',
             subtitle: '発車駅',
-            destination: const _RouteSelectionPage(),
+            destination: const _StationSelectionPage(),
           ),
           _buildListTile(
             context,
@@ -151,6 +151,41 @@ class _RouteSelectionPageState extends State<_RouteSelectionPage> {
               ],
             ),
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class _StationSelectionPage extends StatelessWidget {
+  const _StationSelectionPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoPageScaffold(
+      navigationBar: const CupertinoNavigationBar(
+        middle: Text('駅選択'),
+      ),
+      child: SafeArea(
+        child: Column(
+          children: [
+            const SearchTextFieldPage(),
+            Expanded(
+              child: CupertinoScrollbar(
+                child: ListView.builder(
+                  itemCount: 10, // 駅の数をここに設定
+                  itemBuilder: (context, index) {
+                    return CupertinoListTile(
+                      title: Text('駅 $index'),
+                      onTap: () {
+                        // 駅が選択されたときの処理
+                      },
+                    );
+                  },
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
