@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 
-class SearchTextFieldExample extends StatefulWidget {
-  const SearchTextFieldExample({super.key});
+class SearchTextFieldPage extends StatefulWidget {
+  const SearchTextFieldPage({super.key});
 
   @override
-  State<SearchTextFieldExample> createState() => _SearchTextFieldExampleState();
+  State<SearchTextFieldPage> createState() => _SearchTextFieldPageState();
 }
 
-class _SearchTextFieldExampleState extends State<SearchTextFieldExample> {
+class _SearchTextFieldPageState extends State<SearchTextFieldPage> {
   String text = '';
 
   @override

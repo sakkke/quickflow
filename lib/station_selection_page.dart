@@ -6,8 +6,8 @@ import 'direction_segmented_control.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-class ListSectionInsetExample extends StatelessWidget {
-  const ListSectionInsetExample({super.key});
+class StationSelectionPage extends StatelessWidget {
+  const StationSelectionPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class ListSectionInsetExample extends StatelessWidget {
           ),
           const CupertinoListTile(
             title: Text('方向'),
-            additionalInfo: SegmentedControlExample(),
+            additionalInfo: DirectionSegmentedControl(),
           ),
           _buildListTile(
             context,
@@ -129,7 +129,7 @@ class _RouteSelectionPageState extends State<_RouteSelectionPage> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const SearchTextFieldExample(),
+                const SearchTextFieldPage(),
                 isLoading
                     ? const Center(child: CupertinoActivityIndicator())
                     : CupertinoListSection(

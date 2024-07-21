@@ -35,8 +35,8 @@ class MyApp extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                ListSectionInsetExample(),
-                ListSectionInsetExample2(),
+                StationSelectionPage(),
+                CongestionInfoPage(),
               ],
             ),
           ),

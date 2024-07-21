@@ -2,15 +2,15 @@ import 'package:flutter/cupertino.dart';
 
 enum Direction { up, down }
 
-class SegmentedControlExample extends StatefulWidget {
-  const SegmentedControlExample({super.key});
+class DirectionSegmentedControl extends StatefulWidget {
+  const DirectionSegmentedControl({super.key});
 
   @override
-  State<SegmentedControlExample> createState() =>
-      _SegmentedControlExampleState();
+  State<DirectionSegmentedControl> createState() =>
+      _DirectionSegmentedControlState();
 }
 
-class _SegmentedControlExampleState extends State<SegmentedControlExample> {
+class _DirectionSegmentedControlState extends State<DirectionSegmentedControl> {
   Direction _selectedSegment = Direction.up;
 
   @override

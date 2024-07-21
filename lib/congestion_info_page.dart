@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
-class ListSectionInsetExample2 extends StatelessWidget {
-  const ListSectionInsetExample2({super.key});
+class CongestionInfoPage extends StatelessWidget {
+  const CongestionInfoPage({super.key});
 
   @override
   Widget build(BuildContext context) {
