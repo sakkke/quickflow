@@ -18,9 +18,7 @@ class _SegmentedControlExampleState extends State<SegmentedControlExample> {
     return CupertinoSlidingSegmentedControl<Direction>(
       backgroundColor: CupertinoColors.systemGrey2,
       thumbColor: CupertinoColors.activeGreen,
-      // This represents the currently selected segmented control.
       groupValue: _selectedSegment,
-      // Callback that sets the selected segmented control.
       onValueChanged: (Direction? value) {
         if (value != null) {
           setState(() {
@@ -28,16 +26,20 @@ class _SegmentedControlExampleState extends State<SegmentedControlExample> {
           });
         }
       },
-      children: const <Direction, Widget>{
-        Direction.up: Text(
-          '上り',
-          style: TextStyle(color: CupertinoColors.white),
-        ),
-        Direction.down: Text(
-          '下り',
-          style: TextStyle(color: CupertinoColors.white),
-        ),
-      },
+      children: _buildSegmentedControlChildren(),
     );
+  }
+
+  Map<Direction, Widget> _buildSegmentedControlChildren() {
+    return const <Direction, Widget>{
+      Direction.up: Text(
+        '上り',
+        style: TextStyle(color: CupertinoColors.white),
+      ),
+      Direction.down: Text(
+        '下り',
+        style: TextStyle(color: CupertinoColors.white),
+      ),
+    };
   }
 }
