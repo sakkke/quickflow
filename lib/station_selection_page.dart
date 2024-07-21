@@ -204,7 +204,6 @@ class _TimeSelectionPage extends StatelessWidget {
       child: SafeArea(
         child: Column(
           children: [
-            const SearchTextFieldPage(),
             Expanded(
               child: CupertinoScrollbar(
                 child: ListView.builder(
