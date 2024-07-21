@@ -225,8 +225,39 @@ class _StationSelectionPageState extends State<_StationSelectionPage> {
   }
 }
 
-class _TimeSelectionPage extends StatelessWidget {
+class _TimeSelectionPage extends StatefulWidget {
   const _TimeSelectionPage({super.key});
+
+  @override
+  _TimeSelectionPageState createState() => _TimeSelectionPageState();
+}
+
+class _TimeSelectionPageState extends State<_TimeSelectionPage> {
+  List<String> times = [];
+  bool isLoading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    fetchTimes();
+  }
+
+  Future<void> fetchTimes() async {
+    final response = await http.get(
+        Uri.parse('https://quickflowapp.design-perspective.com/api/v1/times'));
+
+    if (response.statusCode == 200) {
+      final Map<String, dynamic> data = json.decode(response.body);
+      setState(() {
+        times = (data['times'] as List<dynamic>)
+            .map((time) => time['time'] as String)
+            .toList();
+        isLoading = false;
+      });
+    } else {
+      throw Exception('Failed to load times');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -239,17 +270,19 @@ class _TimeSelectionPage extends StatelessWidget {
           children: [
             Expanded(
               child: CupertinoScrollbar(
-                child: ListView.builder(
-                  itemCount: 24, // 時刻の数をここに設定 (例: 24時間)
-                  itemBuilder: (context, index) {
-                    return CupertinoListTile(
-                      title: Center(child: Text('${index}:00')), // 時刻を中央揃え
-                      onTap: () {
-                        // 時刻が選択されたときの処理
-                      },
-                    );
-                  },
-                ),
+                child: isLoading
+                    ? const Center(child: CupertinoActivityIndicator())
+                    : ListView.builder(
+                        itemCount: times.length,
+                        itemBuilder: (context, index) {
+                          return CupertinoListTile(
+                            title: Center(child: Text(times[index])), // 時刻を中央揃え
+                            onTap: () {
+                              // 時刻が選択されたときの処理
+                            },
+                          );
+                        },
+                      ),
               ),
             ),
           ],
