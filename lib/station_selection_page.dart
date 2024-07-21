@@ -157,8 +157,39 @@ class _RouteSelectionPageState extends State<_RouteSelectionPage> {
   }
 }
 
-class _StationSelectionPage extends StatelessWidget {
+class _StationSelectionPage extends StatefulWidget {
   const _StationSelectionPage({super.key});
+
+  @override
+  _StationSelectionPageState createState() => _StationSelectionPageState();
+}
+
+class _StationSelectionPageState extends State<_StationSelectionPage> {
+  List<String> stations = [];
+  bool isLoading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    fetchStations();
+  }
+
+  Future<void> fetchStations() async {
+    final response = await http.get(Uri.parse(
+        'https://quickflowapp.design-perspective.com/api/v1/stations'));
+
+    if (response.statusCode == 200) {
+      final Map<String, dynamic> data = json.decode(response.body);
+      setState(() {
+        stations = (data['stations'] as List<dynamic>)
+            .map((station) => station['name'] as String)
+            .toList();
+        isLoading = false;
+      });
+    } else {
+      throw Exception('Failed to load stations');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -172,17 +203,19 @@ class _StationSelectionPage extends StatelessWidget {
             const SearchTextFieldPage(),
             Expanded(
               child: CupertinoScrollbar(
-                child: ListView.builder(
-                  itemCount: 10, // 駅の数をここに設定
-                  itemBuilder: (context, index) {
-                    return CupertinoListTile(
-                      title: Text('駅 $index'),
-                      onTap: () {
-                        // 駅が選択されたときの処理
-                      },
-                    );
-                  },
-                ),
+                child: isLoading
+                    ? const Center(child: CupertinoActivityIndicator())
+                    : ListView.builder(
+                        itemCount: stations.length,
+                        itemBuilder: (context, index) {
+                          return CupertinoListTile(
+                            title: Text(stations[index]),
+                            onTap: () {
+                              // 駅が選択されたときの処理
+                            },
+                          );
+                        },
+                      ),
               ),
             ),
           ],
