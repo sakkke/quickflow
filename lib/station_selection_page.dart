@@ -122,7 +122,7 @@ class _RouteSelectionPageState extends State<_RouteSelectionPage> {
       backgroundColor: CupertinoColors.secondarySystemBackground,
       navigationBar: const CupertinoNavigationBar(
         automaticallyImplyLeading: true,
-        middle: Text("駅選択"),
+        middle: Text("路線選択"),
       ),
       child: SafeArea(
         child: CupertinoScrollbar(
