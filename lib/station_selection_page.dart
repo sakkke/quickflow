@@ -35,7 +35,7 @@ class StationSelectionPage extends StatelessWidget {
             context,
             title: '7:05',
             subtitle: '発車時刻',
-            destination: const _SecondPage(text: 'Open pull request'),
+            destination: const _TimeSelectionPage(),
           ),
         ],
       ),
@@ -179,6 +179,41 @@ class _StationSelectionPage extends StatelessWidget {
                       title: Text('駅 $index'),
                       onTap: () {
                         // 駅が選択されたときの処理
+                      },
+                    );
+                  },
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _TimeSelectionPage extends StatelessWidget {
+  const _TimeSelectionPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoPageScaffold(
+      navigationBar: const CupertinoNavigationBar(
+        middle: Text('時刻選択'),
+      ),
+      child: SafeArea(
+        child: Column(
+          children: [
+            const SearchTextFieldPage(),
+            Expanded(
+              child: CupertinoScrollbar(
+                child: ListView.builder(
+                  itemCount: 24, // 時刻の数をここに設定 (例: 24時間)
+                  itemBuilder: (context, index) {
+                    return CupertinoListTile(
+                      title: Text('${index}:00'),
+                      onTap: () {
+                        // 時刻が選択されたときの処理
                       },
                     );
                   },
