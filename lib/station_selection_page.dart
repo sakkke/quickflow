@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:quickflow/search_text_field_example.dart';
 
-import 'segmented_control_example.dart';
+import 'direction_segmented_control.dart';
 
 import 'package:http/http.dart' as http;
 import 'dart:convert';
