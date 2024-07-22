@@ -27,14 +27,14 @@ class CongestionInfoPage extends StatelessWidget {
     return CupertinoListTile(
       title: Text(title),
       subtitle: Text(subtitle),
-      leading: ClipRRect(
-        borderRadius: BorderRadius.circular(7.0),
-        child: Container(
-          width: double.infinity,
-          height: double.infinity,
-          color: CupertinoColors.activeGreen,
-        ),
-      ),
+      // leading: ClipRRect(
+      //   borderRadius: BorderRadius.circular(7.0),
+      //   child: Container(
+      //     width: double.infinity,
+      //     height: double.infinity,
+      //     color: CupertinoColors.activeGreen,
+      //   ),
+      // ),
       trailing: const CupertinoListTileChevron(),
       onTap: () => Navigator.of(context).push(
         CupertinoPageRoute<void>(

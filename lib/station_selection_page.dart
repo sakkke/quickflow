@@ -49,14 +49,14 @@ class StationSelectionPage extends StatelessWidget {
     return CupertinoListTile(
       title: Text(title),
       subtitle: Text(subtitle),
-      leading: ClipRRect(
-        borderRadius: BorderRadius.circular(7.0),
-        child: Container(
-          width: double.infinity,
-          height: double.infinity,
-          color: CupertinoColors.activeGreen,
-        ),
-      ),
+      // leading: ClipRRect(
+      //   borderRadius: BorderRadius.circular(7.0),
+      //   child: Container(
+      //     width: double.infinity,
+      //     height: double.infinity,
+      //     color: CupertinoColors.activeGreen,
+      //   ),
+      // ),
       trailing: const CupertinoListTileChevron(),
       onTap: () => Navigator.of(context).push(
         CupertinoPageRoute<void>(
@@ -134,18 +134,18 @@ class _RouteSelectionPageState extends State<_RouteSelectionPage> {
                     ? const Center(child: CupertinoActivityIndicator())
                     : CupertinoListSection(
                         children: stations
-                            .map<CupertinoListTile>((station) =>
-                                CupertinoListTile(
-                                  title: Text(station),
-                                  leading: ClipRRect(
-                                    borderRadius: BorderRadius.circular(7.0),
-                                    child: Container(
-                                      width: double.infinity,
-                                      height: double.infinity,
-                                      color: CupertinoColors.activeGreen,
-                                    ),
-                                  ),
-                                ))
+                            .map<CupertinoListTile>(
+                                (station) => CupertinoListTile(
+                                      title: Text(station),
+                                      // leading: ClipRRect(
+                                      //   borderRadius: BorderRadius.circular(7.0),
+                                      //   child: Container(
+                                      //     width: double.infinity,
+                                      //     height: double.infinity,
+                                      //     color: CupertinoColors.activeGreen,
+                                      //   ),
+                                      // ),
+                                    ))
                             .toList(),
                       ),
               ],
