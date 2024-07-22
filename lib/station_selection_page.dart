@@ -263,7 +263,7 @@ class _TimeSelectionPageState extends State<_TimeSelectionPage> {
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: const CupertinoNavigationBar(
-        middle: Text('時刻選択'),
+        middle: Text('n号車'),
       ),
       child: SafeArea(
         child: Column(
