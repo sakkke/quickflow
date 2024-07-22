@@ -19,6 +19,12 @@ wss.on('connection', (ws) => {
   })
 
   ws.send('Welcome to the WebSocket server!')
+
+  // 5秒ごとにランダムな情報を送信
+  setInterval(() => {
+    const randomNumber = Math.floor(Math.random() * 5)
+    ws.send(JSON.stringify({ event: 'information', data: randomNumber }))
+  }, 5000)
 })
 
 export default app
