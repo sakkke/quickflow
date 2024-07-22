@@ -276,7 +276,7 @@ class _TimeSelectionPageState extends State<_TimeSelectionPage> {
                         itemCount: times.length,
                         itemBuilder: (context, index) {
                           return CupertinoListTile(
-                            title: Center(child: Text(times[index])), // 時刻を中央揃え
+                            title: Text(times[index]), // 時刻を中央揃え
                             onTap: () {
                               // 時刻が選択されたときの処理
                             },
